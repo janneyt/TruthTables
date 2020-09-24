@@ -16,6 +16,9 @@ class testLogic(unittest.TestCase):
     def testAndFF(self):
         self.assertEqual(logicAnd(False, False), ':p  :q  :p and q\n:F  :F  :F\n')
 
+    def testAndString(self):
+        self.assertEqual(logicAnd("Hi", "World"), ERROR)
+
     def testEvaluateAndTF(self):
         self.assertEqual(evaluateAnd(True, False), False)
 
