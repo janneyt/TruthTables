@@ -19,6 +19,9 @@ class testLogic(unittest.TestCase):
     def testAndString(self):
         self.assertEqual(logicAnd("Hi", "World"), ERROR)
 
+    def testAndInteger(self):
+        self.assertEqual(logicAnd(1,2), ERROR)
+
     def testEvaluateAndTF(self):
         self.assertEqual(evaluateAnd(True, False), False)
 
@@ -30,3 +33,12 @@ class testLogic(unittest.TestCase):
 
     def testEvaluateAndFT(self):
         self.assertEqual(evaluateAnd(False, True), False)
+
+    def testEvaluateString(self):
+        self.assertEqual(evaluateAnd("False", "True"), ERROR)
+
+    def testEvaluateAndInteger(self):
+        self.assertEqual(evaluateAnd(1,0), ERROR)
+
+    def testEvaluateOrTT(self):
+        self.assertEqual(evaluateOr(True, True), ':p  :q  :p or q\n:T  :T  :T\n')

@@ -1,7 +1,10 @@
 TRUE = 'T'
 FALSE = 'F'
 ANDTABLE = '\n:p  :q  :p and q\n:T  :T  :T\n:T  :F  :F\n:F  :T  :F\n:F  :F  :F\n'
-ERROR = "Something went wrong, please enter values again."
+ERROR = "Something went wrong, please enter values again. This program only accepts boolean values in most functions."
+
+def evaluateOr(p, q):
+    pass
 
 def evaluateAnd(p, q):
     '''
@@ -10,6 +13,8 @@ def evaluateAnd(p, q):
 
     Boolean, Boolean -> Boolean
     '''
+    if type(p) != bool or type(q) != bool:
+        return ERROR
     if p and  q:
         return True
     else:
