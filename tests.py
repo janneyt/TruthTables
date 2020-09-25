@@ -42,3 +42,18 @@ class testLogic(unittest.TestCase):
 
     def testEvaluateOrTT(self):
         self.assertEqual(evaluateOr(True, True), ':p  :q  :p or q\n:T  :T  :T\n')
+
+    def testEvaluateOrString(self):
+        self.assertEqual(evaluateOr("True", "False"), ERROR)
+
+    def testEvaluateOrInteger(self):
+        self.assertEqual(evaluateOr(1, 0), ERROR)
+
+    def testEvaluateFF(self):
+        self.assertEqual(evaluateOr(False, False), False)
+
+    def testEvaluateFT(self):
+        self.assertEqual(evaluateOr(False, True), True)
+
+    def testEvaluateOrTF(self):
+        self.assertEqual(evaluateOr(True, False), True)
