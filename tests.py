@@ -6,23 +6,23 @@ class testLogic(unittest.TestCase):
     def testInput(self):
         self.assertEqual(initInput("a and b"), ANDTABLE)
 
-    def testInputIntegerAlone(self):
-        self.assertEqual(initInput(1), getInput(INITERROR))
+        def testInputIntegerAlone(self):
+            self.assertEqual(initInput(1), getInput(INITERROR))
 
-    def testInputIntegerSymbols(self):
-        self.assertEqual(initInput("a^b"), getInput(INITERROR))
+        def testInputIntegerSymbols(self):
+            self.assertEqual(initInput("a^b"), getInput(INITERROR))
 
-    def testInputString(self):
-        self.assertEqual(initInput("Hello world"), getInput(INITERROR))
+        def testInputString(self):
+            self.assertEqual(initInput("Hello world"), getInput(INITERROR))
 
-    def testInputBoolean(self):
-        self.assertEqual(initInput(True), getInput(INITERROR))
+        def testInputBoolean(self):
+            self.assertEqual(initInput(True), getInput(INITERROR))
 
-    def testInputIntegerMisspelled(self):
-        self.assertEqual(initInput("a adn b"), getInput(INITERROR))
+        def testInputIntegerMisspelled(self):
+            self.assertEqual(initInput("a adn b"), getInput(INITERROR))
 
-    def testInputIntegerError(self):
-        self.assertEqual(initInput(INITERROR), getInput(INITERROR))
+        def testInputIntegerError(self):
+            self.assertEqual(initInput(INITERROR), getInput(INITERROR))
 
     def testAndTF(self):
         self.assertEqual(logicAnd(True, False), ':p  :q  :p and q\n:T  :F  :F\n')
