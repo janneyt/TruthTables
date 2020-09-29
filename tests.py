@@ -182,3 +182,9 @@ class testLogic(unittest.TestCase):
 
     def testParenthesesKeywordOnly(self):
         self.assertEqual(evaluateParentheses("(if p, then )"), getInput(KEYERROR))
+
+    def testParenthesesExtraKeywords(self):
+        self.assertEqual(evaluateParentheses("(if if p, then q)"), getInput(KEYERROR))
+
+    def testParenthesesExtraKeywordsThen(self):
+        self.assertEqual(evaluateParentheses("(if p, then then q)"), getInput(KEYERROR))

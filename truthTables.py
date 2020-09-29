@@ -81,11 +81,22 @@ KEYERROR = ("You have attempted to use a keyword in an invalid place, such as "
         +"after another valid keyword.\nRepent of your sins and enter your "
         +"proposition again.\n")
 
+'''
+################################################################################
+Input Entry and Validation Functions
+################################################################################
+'''
 def getInput(message):
     pass
 
 def initInput(message):
     pass
+
+'''
+################################################################################
+Functions that generate representations of truth tables and logical statements
+################################################################################
+'''
 
 def representOr(p, q):
     pass
@@ -103,6 +114,21 @@ def representAnd(p, q):
         return True
     else:
         return False
+
+def representConditional(message):
+    '''
+    Takes a conditioal statement and returns a string with the truth table for a conditional.
+
+    String -> String
+    '''
+    pass
+
+
+'''
+################################################################################
+Functions that evaluate truth tables
+################################################################################
+'''
 
 def logicAnd(p, q):
     '''
@@ -133,13 +159,12 @@ def logicAnd(p, q):
     else:
         return ERROR
 
-def representConditional(message):
-    '''
-    Takes a conditioal statement and returns a string with the truth table for a conditional.
-
-    String -> String
-    '''
-    pass
+'''
+################################################################################
+Functions that evaluate a logical statement and break it down to its constituent
+elements.
+################################################################################
+'''
 
 def evaluateConditional(message):
     '''
@@ -148,6 +173,12 @@ def evaluateConditional(message):
     String -> String
     '''
     pass
+
+'''
+################################################################################
+Parser functions
+################################################################################
+'''
 
 def evaluateParentheses(message):
     '''
