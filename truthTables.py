@@ -1,3 +1,9 @@
+import sentry_sdk
+sentry_sdk.init(
+    "https://fa56999182eb46079528c6440bbc6fd4@o454438.ingest.sentry.io/5444367",
+    traces_sample_rate=1.0
+)
+
 TRUE = 'T'
 FALSE = 'F'
 ANDTABLE = '\n:p  :q  :p and q\n:T  :T  :T\n:T  :F  :F\n:F  :T  :F\n:F  :F  :F\n'
@@ -129,7 +135,8 @@ def representAnd(p, q):
         return ERROR
     if p and  q:
         return True
-    return False
+    else:
+        return False
 
 def representConditional(message):
     '''
@@ -160,14 +167,14 @@ def logicAnd(p, q):
 
     if evalLogic is True:
         return return_eval + TRUE + '  :' + TRUE + '  :' +TRUE + '\n'
-    if p is True:
+    elif p is True:
         if q is False:
             return return_eval + TRUE+'  :'+FALSE+'  :'+FALSE+'\n'
         return ERROR
-    if p is False:
+    elif p is False:
         if q is False:
             return return_eval + FALSE+'  :'+FALSE+'  :'+FALSE+'\n'
-        if q is True:
+        elif q is True:
             return return_eval + FALSE+'  :'+TRUE+'  :'+FALSE+'\n'
         return ERROR
     return ERROR
