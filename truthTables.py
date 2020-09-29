@@ -158,16 +158,18 @@ def logicAnd(p, q):
         return ERROR
     return_eval = ':p  :q  :p and q\n:'
 
-    if eval == True:
+    if eval is True:
         return return_eval + TRUE + '  :' + TRUE + '  :' +TRUE + '\n'
-    if p == True:
-        if q == False:
+
+    elif p is True:
+        if q is False:
             return return_eval + TRUE+'  :'+FALSE+'  :'+FALSE+'\n'
-        return ERROR
-    elif p == False:
-        if q == False:
+        else:
+            return ERROR
+    elif p is False:
+        if q is False:
             return return_eval + FALSE+'  :'+FALSE+'  :'+FALSE+'\n'
-        if q == True:
+        elif q is True:
             return return_eval + FALSE+'  :'+TRUE+'  :'+FALSE+'\n'
         return ERROR
     else:
