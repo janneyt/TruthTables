@@ -6,22 +6,22 @@ class testLogic(unittest.TestCase):
     def testInput(self):
         self.assertEqual(initInput("a and b"), ANDTABLE)
 
-    def testInputInteger(self):
+    def testInputIntegerAlone(self):
         self.assertEqual(initInput(1), getInput(INITERROR))
 
-    def testInputInteger(self):
+    def testInputIntegerSymbols(self):
         self.assertEqual(initInput("a^b"), getInput(INITERROR))
 
-    def testInputInteger(self):
+    def testInputString(self):
         self.assertEqual(initInput("Hello world"), getInput(INITERROR))
 
-    def testInputInteger(self):
+    def testInputBoolean(self):
         self.assertEqual(initInput(True), getInput(INITERROR))
 
-    def testInputInteger(self):
+    def testInputIntegerMisspelled(self):
         self.assertEqual(initInput("a adn b"), getInput(INITERROR))
 
-    def testInputInteger(self):
+    def testInputIntegerError(self):
         self.assertEqual(initInput(INITERROR), getInput(INITERROR))
 
     def testAndTF(self):
