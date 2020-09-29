@@ -71,8 +71,11 @@ BLANKERROR = ("You have entered at least one blank pair of parentheses."
         +"Please repent of your sins and enter again.")
 
 SPELLERROR = ("A keyword, such as \'if\' or \'and'\' has been misspelled or is "
-        +"in the wrong location in the proposition. Please repent of your sins "
-        +"and enter your proposition again. For usage details type -h.")
+        +"in the wrong location in the proposition.\nPlease repent of your sins "
+        +"and enter your proposition again.\nFor usage details type -h.")
+
+SPACEERROR = ("There must be one (1) and only one (1) space between keywords "
+        +"and logical operators.\n")
 
 def getInput(message):
     pass

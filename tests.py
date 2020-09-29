@@ -156,5 +156,23 @@ class testLogic(unittest.TestCase):
     def testParenthesesBlank(self):
         self.assertEqual(evaluateParentheses("()"), getInput(BLANKERROR))
 
-    def testParenthesesMisspelled(self):
+    def testParenthesesMisspelledIf(self):
         self.assertEqual(evaluateParentheses("(ef p, then q)"), getInput(SPELLERROR))
+
+    def testParenthesesMisspelledThen(self):
+        self.assertEqual(evaluateParentheses("(if p, thenq)"), getInput(SPELLERROR))
+
+    def testParenthesesExtraCommas(self):
+        self.assertEqual(evaluateParenthese("(if p, then, q)"), getInput(COMMAERROR))
+
+    def testParenthesesExtraCommasEverywhere(self):
+        self.assertEqual(evaluateParentheses("(if p,, then q)"), getinput(COMMAERROR))
+
+    def testParenthesesWrongCharacters(self):
+        self.assertEqual(evaluateParentheses("(if p,. then q)"), getinput(SPELLERROR))
+
+    def testParenthesesMissingSpaces(self):
+        self.assertEqual(evaluateParentheses("(if p,then q)"), getInput(SPACEERROR))
+
+    def testParenthesesExtraSpaces(self):
+        self.assertEqual(evaluateParentheses("(if p,  then q)"), getInput(SPACEERROR))
