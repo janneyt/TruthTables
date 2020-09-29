@@ -116,3 +116,6 @@ class testLogic(unittest.TestCase):
 
     def testBreakConditionIntoLorMulti(self):
         self.assertEqual(evaluateConditional("if p, then (if q, then r)"), "~p or (~q or r)")
+
+    def testBreakConditionalIntLorMalformed(self):
+        self.assertEqual(evaluateConditional("if p then q"), getInput(COMMAERROR))
