@@ -65,16 +65,6 @@ USAGE = ("To use this truth table script, you need to type in a logical proposit
         +"Allowed expressions and symbols:"
         +ALLOWEDSYMBOLS)
 
-ALLOWEDSYMBOLS = ("\nLogical and: and\n"
-        +"Logical or: or\n"
-        +"Logical conditional: if {valid character a-z, A-A, no numbers}, then "
-        +"{valid character a-z, A-Z, no numbers}"
-        +"\nNote: please remember to insert the comma between the if and then clause, "
-        +"as this helps the interpreter "
-        +"understand your nonsense.\n"
-        +"Logical not: ~"
-        +"Parentheses: separates clauses. ( ) must be around EVERY clause.")
-
 BLANKERROR = ("You have entered at least one blank pair of parentheses."
         +"Please repent of your sins and enter again.")
 
