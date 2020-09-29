@@ -67,6 +67,13 @@ ALLOWEDSYMBOLS = ("\nLogical and: and\n"
         +"Logical not: ~"
         +"Parentheses: separates clauses. ( ) must be around EVERY clause.")
 
+BLANKERROR = ("You have entered at least one blank pair of parentheses."
+        +"Please repent of your sins and enter again.")
+
+SPELLERROR = ("A keyword, such as \'if\' or \'and'\' has been misspelled or is "
+        +"in the wrong location in the proposition. Please repent of your sins "
+        +"and enter your proposition again. For usage details type -h.")
+
 def getInput(message):
     pass
 
@@ -132,5 +139,14 @@ def evaluateConditional(message):
     Takes a conditional statement and returns a series of logical or statements for further evaluation.
 
     String -> String
+    '''
+    pass
+
+def evaluateParentheses(message):
+    '''
+    Takes a string, representing a logical statement, and checks whether it has
+    parentheses setup. It is also the gateway to all other parsing validation.
+
+    String -> Bool and/or error
     '''
     pass

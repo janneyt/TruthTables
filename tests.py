@@ -119,3 +119,42 @@ class testLogic(unittest.TestCase):
 
     def testBreakConditionalIntLorMalformed(self):
         self.assertEqual(evaluateConditional("if p then q"), getInput(COMMAERROR))
+
+    def testParentheses(self):
+        self.assertEqual(evaluateParentheses("(if p, then q)"), True)
+
+    def testParenthesesMalformed(self):
+        self.assertEqual(evaluateParentheses("if p, then q)"), getInput(PARAERROR))
+
+    def testParenthesesMalformedAll(self):
+        self.assertEqual(evaluateParentheses("if p, then q"), getInput(PARAERROR))
+
+    def testParenthesesBadConditional(self):
+        self.assertEqual(evaluateParentheses("(if p then q)"), getInput(COMMAERROR))
+
+    def testParenthesesMulti(self):
+        self.assertEqual(evaluateParentheses("(if p, then (if q, then r))"), True)
+
+    def testParenthesesMultiMalformed(self):
+        self.assertEqual(evaluateParentheses("(if p, then if q, then r)"), getInput(PARAERROR))
+
+    def testParenthesesMultiComma(self):
+        self.assertEqual(evaluateParentheses("(if p, then (if q then r))"), getInput(COMMAERROR))
+
+    def testParenthesesTooMany(self):
+        self.assertEqual(evaluateParentheses("((if p, then (if q, then r)))"), evaluateParentheses("(if p, then (if q, then r))"))
+
+    def testParenthesesInvalidConditional(self):
+        self.assertEqual(evaluateParentheses("(if p, then if q, (then r))"), getInput(PARAERROR))
+
+    def testParenthesesInvalidHypothesis(self):
+        self.assertEqual(evaluateParentheses("((if p), then (if q, then r))"), getInput(PARAERROR))
+
+    def testParenthesesParaBeforeThen(self):
+        self.assertEqual(evaluateParentheses("(if p, (then, if q, then r))"), getInput(PARAERROR))
+
+    def testParenthesesBlank(self):
+        self.assertEqual(evaluateParentheses("()"), getInput(BLANKERROR))
+
+    def testParenthesesMisspelled(self):
+        self.assertEqual(evaluateParentheses("(ef p, then q)"), getInput(SPELLERROR))
