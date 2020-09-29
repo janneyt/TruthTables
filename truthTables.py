@@ -77,6 +77,10 @@ SPELLERROR = ("A keyword, such as \'if\' or \'and'\' has been misspelled or is "
 SPACEERROR = ("There must be one (1) and only one (1) space between keywords "
         +"and logical operators.\n")
 
+KEYERROR = ("You have attempted to use a keyword in an invalid place, such as "
+        +"after another valid keyword.\nRepent of your sins and enter your "
+        +"proposition again.\n")
+
 def getInput(message):
     pass
 

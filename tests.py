@@ -163,16 +163,22 @@ class testLogic(unittest.TestCase):
         self.assertEqual(evaluateParentheses("(if p, thenq)"), getInput(SPELLERROR))
 
     def testParenthesesExtraCommas(self):
-        self.assertEqual(evaluateParenthese("(if p, then, q)"), getInput(COMMAERROR))
+        self.assertEqual(evaluateParentheses("(if p, then, q)"), getInput(COMMAERROR))
 
     def testParenthesesExtraCommasEverywhere(self):
-        self.assertEqual(evaluateParentheses("(if p,, then q)"), getinput(COMMAERROR))
+        self.assertEqual(evaluateParentheses("(if p,, then q)"), getInput(COMMAERROR))
 
     def testParenthesesWrongCharacters(self):
-        self.assertEqual(evaluateParentheses("(if p,. then q)"), getinput(SPELLERROR))
+        self.assertEqual(evaluateParentheses("(if p,. then q)"), getInput(SPELLERROR))
 
     def testParenthesesMissingSpaces(self):
         self.assertEqual(evaluateParentheses("(if p,then q)"), getInput(SPACEERROR))
 
     def testParenthesesExtraSpaces(self):
         self.assertEqual(evaluateParentheses("(if p,  then q)"), getInput(SPACEERROR))
+
+    def testParenthesesUseOfKeyword(self):
+        self.assertEqual(evaluateParentheses("(if p, then then)"), getInput(KEYERROR))
+
+    def testParenthesesKeywordOnly(self):
+        self.assertEqual(evaluateParentheses("(if p, then )"), getInput(KEYERROR))
