@@ -32,6 +32,41 @@ MULTICONTRATABLE = ("\n:p  :q  :r  :p -> (q -> r)\n:T  :T  :T  :T\n:T  :F  :T  "
 PARAERROR = ("You are missing at least one parenthesis. Please adjust your input"
         + " and make sure you provide parenthesis for all multiple clause expressions.")
 
+COMMAERROR = ("You have attempted to enter an expression using a conditional, but "
+        +"you forgot to separate clauses with a comman (,).\nThe hypothesis and"
+        +"conclusion of a logical statement must be separated by a comma, or else"
+        +"the world ends.")
+
+ALLOWEDSYMBOLS = ("\nLogical and: and\n"
+        +"Logical or: or\n"
+        +"Logical conditional: if {valid character a-z, A-A, no numbers}, then"
+        +"{valid character a-z, A-Z, no numbers}"
+        +"\nNote: please remember to insert the comma between the if and then clause,"
+        +"as this helps the interpreter "
+        +"understand your nonsense.\n"
+        +"Logical not: ~"
+        +"Parentheses: separates clauses. ( ) must be around EVERY clause.")
+
+USAGE = ("To use this truth table script, you need to type in a logical proposition "
+        +"with each clause separated by parentheses.\nEvery logical operator must "
+        +"be in its own separate clause.\n"
+        +"For instance, to write \"if p then, if q, then r\" you would input "
+        +"\"if p, then (if q, then r).\nUse the words \"if\" and \"then\" instead "
+        +"of logical operators due to symbol ambiguity.\nDo not use synomyms for"
+        +"\"if\" and \"then\" such as \"unless\". It scares the computer.\n"
+        +"Allowed expressions and symbols:"
+        +ALLOWEDSYMBOLS)
+
+ALLOWEDSYMBOLS = ("\nLogical and: and\n"
+        +"Logical or: or\n"
+        +"Logical conditional: if {valid character a-z, A-A, no numbers}, then "
+        +"{valid character a-z, A-Z, no numbers}"
+        +"\nNote: please remember to insert the comma between the if and then clause, "
+        +"as this helps the interpreter "
+        +"understand your nonsense.\n"
+        +"Logical not: ~"
+        +"Parentheses: separates clauses. ( ) must be around EVERY clause.")
+
 def getInput(message):
     pass
 
@@ -90,3 +125,6 @@ def representConditional(message):
 
     String -> String
     '''
+    pass
+
+print(USAGE)

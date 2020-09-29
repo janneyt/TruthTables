@@ -79,10 +79,13 @@ class testLogic(unittest.TestCase):
         self.assertEqual(representOr(True, False), True)
 
     def testrepresentConditional(self):
-        self.assertEqual(representConditional("if p then q"), CONDTABLE)
+        self.assertEqual(representConditional("if p, then q"), CONDTABLE)
 
     def testrepresentConditionalMalformed(self):
-        self.assertEqual(representConditional("f p then q"), initInput(CONDERROR))
+        self.assertEqual(representConditional("f p, then q"), getInput(CONDERROR))
+
+    def testrepresentConditionalCommaMiss(self):
+        self.assertEqual(representConditional("if p then q"), getInput(COMMAERROR))
 
     def testRepresentConditionalInteger(self):
         self.assertEqual(representConditional(1), getInput(CONDERROR))
@@ -91,13 +94,13 @@ class testLogic(unittest.TestCase):
         self.assertEqual(representConditional(True), getInput(CONDERROR))
 
     def testRepresentConditionalContradiction(self):
-        self.assertEqual(representConditional("if p then ~p"), getInput(CONTRACOND))
+        self.assertEqual(representConditional("if p, then ~p"), getInput(CONTRACOND))
 
     def testRepresentConditionalTautology(self):
-        self.assertEqual(representConditional("if p then p"), getInput(CONTRATAUT))
+        self.assertEqual(representConditional("if p, then p"), getInput(CONTRATAUT))
 
     def testRepresentConditionalMultiple(self):
-        self.assertEqual(representConditional("if p then (if q then r)"), MULTICONTRATABLE)
+        self.assertEqual(representConditional("if p, then (if q then r)"), MULTICONTRATABLE)
 
     def testRepresentConditionalMultiMalformed(self):
-        self.assertEqual(representConditional("if p then if q then r"), getInput(PARAERROR))
+        self.assertEqual(representConditional("if p, then if q then r"), getInput(PARAERROR))
