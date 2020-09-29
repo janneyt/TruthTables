@@ -14,7 +14,7 @@ script:
 
 #install sentry
 script:
-  - pip install
+  - pip install sentry-sdk
 
 
 # Run the unit test
