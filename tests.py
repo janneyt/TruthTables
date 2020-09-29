@@ -2,7 +2,8 @@ import unittest
 from truthTables import *
 
 
-class testLogic(unittest.TestCase):
+class testInput(unittest.TestCase):
+
     def testInput(self):
         self.assertEqual(initInput("a and b"), ANDTABLE)
 
@@ -24,23 +25,25 @@ class testLogic(unittest.TestCase):
         def testInputIntegerError(self):
             self.assertEqual(initInput(INITERROR), getInput(INITERROR))
 
+class testLogic(unittest.TestCase):
+
     def testAndTF(self):
         self.assertEqual(logicAnd(True, False), ':p  :q  :p and q\n:T  :F  :F\n')
 
-    def testAndTT(self):
-        self.assertEqual(logicAnd(True, True), ':p  :q  :p and q\n:T  :T  :T\n')
+        def testAndTT(self):
+            self.assertEqual(logicAnd(True, True), ':p  :q  :p and q\n:T  :T  :T\n')
 
-    def testAndFT(self):
-        self.assertEqual(logicAnd(False, True), ':p  :q  :p and q\n:F  :T  :F\n')
+        def testAndFT(self):
+            self.assertEqual(logicAnd(False, True), ':p  :q  :p and q\n:F  :T  :F\n')
 
-    def testAndFF(self):
-        self.assertEqual(logicAnd(False, False), ':p  :q  :p and q\n:F  :F  :F\n')
+        def testAndFF(self):
+            self.assertEqual(logicAnd(False, False), ':p  :q  :p and q\n:F  :F  :F\n')
 
-    def testAndString(self):
-        self.assertEqual(logicAnd("Hi", "World"), getInput(ERROR))
+        def testAndString(self):
+            self.assertEqual(logicAnd("Hi", "World"), getInput(ERROR))
 
-    def testAndInteger(self):
-        self.assertEqual(logicAnd(1,2), getInput(ERROR))
+        def testAndInteger(self):
+            self.assertEqual(logicAnd(1,2), getInput(ERROR))
 
     def testrepresentAndTF(self):
         self.assertEqual(representAnd(True, False), False)
@@ -110,6 +113,8 @@ class testLogic(unittest.TestCase):
 
     def testRepresentConditionalMultMalformedComma(self):
         self.assertEqual(representConditional("if p, then (if q then r)"), getInput(COMMAERROR))
+
+class testParser(unittest.TestCase):
 
     def testBreakConditionIntoLor(self):
         self.assertEqual(evaluateConditional("if p, then q"), "~p or q")
