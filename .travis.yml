@@ -9,4 +9,11 @@ install:
 # command to run tests
 script:
   - python -m unittest tests.py truthTables.py
-CODECOV_TOKEN="dad0011f-0bf6-461d-9b13-6c75832ea68a"
+
+# Run the unit test
+script:
+  - coverage run tests.py
+
+# Push the results back to codecov
+after_success:
+  - codecov
