@@ -12,6 +12,10 @@ install:
 script:
   - python -m unittest tests.py truthTables.py
 
+#install sentry
+script:
+  - pip install
+
 
 # Run the unit test
 script:
