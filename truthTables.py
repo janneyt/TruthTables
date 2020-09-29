@@ -127,4 +127,10 @@ def representConditional(message):
     '''
     pass
 
-print(USAGE)
+def evaluateConditional(message):
+    '''
+    Takes a conditional statement and returns a series of logical or statements for further evaluation.
+
+    String -> String
+    '''
+    pass

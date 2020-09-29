@@ -100,7 +100,19 @@ class testLogic(unittest.TestCase):
         self.assertEqual(representConditional("if p, then p"), getInput(CONTRATAUT))
 
     def testRepresentConditionalMultiple(self):
-        self.assertEqual(representConditional("if p, then (if q then r)"), MULTICONTRATABLE)
+        self.assertEqual(representConditional("if p, then (if q, then r)"), MULTICONTRATABLE)
 
-    def testRepresentConditionalMultiMalformed(self):
+    def testRepresentConditionalMultiMalformedPara(self):
         self.assertEqual(representConditional("if p, then if q then r"), getInput(PARAERROR))
+
+    def testRepresentConditionalMultiMalformedPlacePara(self):
+        self.assertEqual(representConditional("if p, (then if q, then r)"), getInput(PARAERROR))
+
+    def testRepresentConditionalMultMalformedComma(self):
+        self.assertEqual(representConditional("if p, then (if q then r)"), getInput(COMMAERROR))
+
+    def testBreakConditionIntoLor(self):
+        self.assertEqual(evaluateConditional("if p, then q"), "~p or q")
+
+    def testBreakConditionIntoLorMulti(self):
+        self.assertEqual(evaluateConditional("if p, then (if q, then r)"), "~p or (~q or r)")
