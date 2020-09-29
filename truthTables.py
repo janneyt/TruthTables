@@ -129,7 +129,8 @@ def representAnd(p, q):
         return ERROR
     if p and  q:
         return True
-    return False
+    else:
+        return False
 
 def representConditional(message):
     '''
@@ -153,21 +154,21 @@ def logicAnd(p, q):
 
     Boolean, Boolean -> string
     '''
-    eval = representAnd(p, q)
+    evalLogic = representAnd(p, q)
     if type(p) != bool or type(q) != bool:
         return ERROR
     return_eval = ':p  :q  :p and q\n:'
 
-    if eval is True:
+    if evalLogic is True:
         return return_eval + TRUE + '  :' + TRUE + '  :' +TRUE + '\n'
-    if p is True:
+    elif p is True:
         if q is False:
             return return_eval + TRUE+'  :'+FALSE+'  :'+FALSE+'\n'
         return ERROR
-    if p is False:
+    elif p is False:
         if q is False:
             return return_eval + FALSE+'  :'+FALSE+'  :'+FALSE+'\n'
-        if q is True:
+        elif q is True:
             return return_eval + FALSE+'  :'+TRUE+'  :'+FALSE+'\n'
         return ERROR
     return ERROR
