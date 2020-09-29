@@ -156,7 +156,10 @@ def logicAnd(p, q):
     if type(p) != bool or type(q) != bool:
         return ERROR
     return_eval = ':p  :q  :p and q\n:'
+    return logicAndProcessing(evalLogic, p, q, return_eval)
 
+
+def logicAndProcessing(evalLogic, p, q, return_eval):
     if evalLogic is True:
         return return_eval + TRUE + '  :' + TRUE + '  :' +TRUE + '\n'
     elif p is True:
