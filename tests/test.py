@@ -1,5 +1,5 @@
 import unittest
-import truthTables
+from TruthTables import *
 
 
 class testInput(unittest.TestCase):
