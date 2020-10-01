@@ -1,4 +1,4 @@
-from ..TruthTables import inputValidator, representTables, logicBlocks, parserParen
+from ..TruthTables import representTables
 
 
 TRUE = 'T'
