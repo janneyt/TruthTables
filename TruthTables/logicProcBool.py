@@ -1,4 +1,4 @@
-from ..TruthTables import *
+from ..TruthTables import inputValidator, representTables, logicBlocks, parserParen
 
 
 TRUE = 'T'
@@ -89,7 +89,7 @@ def logicAnd(p, q):
     '''
     evalLogic = representTables.representAnd(p, q)
     if type(p) != bool or type(q) != bool:
-        return customErrors.ERROR
+        return ERROR
     return_eval = ':p  :q  :p and q\n:'
     return logicAndProcessing(evalLogic, p, q, return_eval)
 
