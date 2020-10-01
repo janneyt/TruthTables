@@ -1,4 +1,4 @@
-from ..TruthTables import inputValidator, representTables, logicProcBool, logicBlocks, parserParen
+from ..TruthTables import inputValidator, representTables, logicProcBool, parserParen
 
 TRUE = 'T'
 FALSE = 'F'
