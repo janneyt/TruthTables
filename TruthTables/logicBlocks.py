@@ -1,4 +1,3 @@
-from ..TruthTables import inputValidator, representTables, logicProcBool, parserParen
 
 TRUE = 'T'
 FALSE = 'F'
