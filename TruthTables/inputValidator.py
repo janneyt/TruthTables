@@ -1,10 +1,3 @@
-
-import sentry_sdk
-sentry_sdk.init(
-    "https://fa56999182eb46079528c6440bbc6fd4@o454438.ingest.sentry.io/5444367",
-    traces_sample_rate=1.0
-)
-
 TRUE = 'T'
 FALSE = 'F'
 ANDTABLE = '\n:p  :q  :p and q\n:T  :T  :T\n:T  :F  :F\n:F  :T  :F\n:F  :F  :F\n'
@@ -83,6 +76,7 @@ KEYERROR = ("You have attempted to use a keyword in an invalid place, such as "
 Input Entry and Validation Functions
 ################################################################################
 '''
+
 def getInput(message):
     '''
     Takes a string, delivers it to the user, takes user's input back, and initiates
@@ -98,106 +92,5 @@ def initInput(message):
     the getInput loop with the user's input.
 
     String, input -> Function call
-    '''
-    pass
-
-'''
-################################################################################
-Functions that generate representations of truth tables and logical statements
-################################################################################
-'''
-
-def representOr(p, q):
-    '''
-    Takes two booleans and generates the corresponding truth table value.
-
-    Boolean, Boolean -> Boolean
-    '''
-    pass
-
-def representAnd(p, q):
-    '''
-    Represents two booleans in a AND truth table and returns the corresponding
-    truth table value.
-
-    Boolean, Boolean -> Boolean
-    '''
-    if type(p) != bool or type(q) != bool:
-        return ERROR
-    if p and  q:
-        return True
-    return False
-
-def representConditional(message):
-    '''
-    Takes a conditioal statement and returns a string with the truth table for a conditional.
-
-    String -> String
-    '''
-    pass
-
-
-'''
-################################################################################
-Functions that evaluate truth tables
-################################################################################
-'''
-
-def logicAnd(p, q):
-    '''
-    Takes a pair of boolean values and returns a string to be printed indicating
-    truth table for that pair of boolean AND expressions.
-
-    Boolean, Boolean -> string
-    '''
-    evalLogic = representAnd(p, q)
-    if type(p) != bool or type(q) != bool:
-        return ERROR
-    return_eval = ':p  :q  :p and q\n:'
-    return logicAndProcessing(evalLogic, p, q, return_eval)
-
-
-def logicAndProcessing(evalLogic, p, q, return_eval):
-    if evalLogic is True:
-        return return_eval + TRUE + '  :' + TRUE + '  :' +TRUE + '\n'
-    if p is True:
-        if q is False:
-            return return_eval + TRUE+'  :'+FALSE+'  :'+FALSE+'\n'
-        return ERROR
-    if p is False:
-        if q is False:
-            return return_eval + FALSE+'  :'+FALSE+'  :'+FALSE+'\n'
-        if q is True:
-            return return_eval + FALSE+'  :'+TRUE+'  :'+FALSE+'\n'
-        return ERROR
-    return ERROR
-
-'''
-################################################################################
-Functions that evaluate a logical statement and break it down to its constituent
-elements.
-################################################################################
-'''
-
-def evaluateConditional(message):
-    '''
-    Takes a conditional statement and returns a series of logical or statements for further evaluation.
-
-    String -> String
-    '''
-    pass
-
-'''
-################################################################################
-Parser functions
-################################################################################
-'''
-
-def evaluateParentheses(message):
-    '''
-    Takes a string, representing a logical statement, and checks whether it has
-    parentheses setup. It is also the gateway to all other parsing validation.
-
-    String -> Bool and/or error
     '''
     pass

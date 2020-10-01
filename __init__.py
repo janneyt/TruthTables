@@ -1,0 +1,1 @@
+from TruthTables import *
